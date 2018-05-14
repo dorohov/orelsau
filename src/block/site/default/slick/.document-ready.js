@@ -23,7 +23,7 @@ $(function() {
 	favorite.slick({
 		slidesToShow: 4,
 		slidesToScroll: 4,
-		arrows: true,
+		arrows: false,
 		dots: true,
 		infinite: false,
 		prevArrow: prevArrow,
