@@ -23,7 +23,7 @@ $(function() {
 	favorite.slick({
 		slidesToShow: 4,
 		slidesToScroll: 4,
-		arrows: false,
+		arrows: true,
 		dots: true,
 		infinite: false,
 		prevArrow: prevArrow,
@@ -45,8 +45,17 @@ $(function() {
 				}
 		    },
 		    {
+				breakpoint: 1025,
+				settings: {					
+					arrows: false,
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+		    },
+		    {
 				breakpoint: 768,
 				settings: {
+					arrows: false,
 					//dots: false,
 					slidesToShow: 1,
 					slidesToScroll: 1,
