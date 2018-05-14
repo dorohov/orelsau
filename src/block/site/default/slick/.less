@@ -254,7 +254,7 @@
 			border: 0;
 			background: @slick-dot-color;
 			display: block;
-			width: 75px;
+			width: 15px;
 			height: 7px;
 			outline: none;
 			line-height: 0px;
@@ -263,6 +263,9 @@
 			//padding: 5px;
 			cursor: pointer;
 			transition: @trs-site;
+			@media @media-point-notsmart {
+				width: 75px;
+			}
 		}
 		&.slick-active button{
 			background: @slick-dot-color-active;

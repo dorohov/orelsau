@@ -68,11 +68,9 @@
 	&container{	
 		position: relative;
 		z-index: 5;
-		@media print{padding: 0!important}
-		@media @media-point-device {
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
+		@media print{padding: 0!important}		
+		padding-top: 40px;
+		padding-bottom: 40px;
 		@media @media-point-screen {
 			padding-top: 5.8vw;
 			padding-bottom: 5.8vw;
@@ -190,6 +188,9 @@
 			}
 
 		}
+		&.is--xs{
+			margin-bottom: 25px;			
+		}
 		&.is--tabs{
 			margin-bottom: 0;
 			@media @media-point-screen-lg {
@@ -295,7 +296,7 @@
 			@media @media-point-xs {
 				.makeCols(6, 12);
 			}
-			@media @media-point-screen {
+			@media @media-point-notsmart {
 				.makeCols(4, 12);
 			}			
 		}
@@ -321,8 +322,40 @@
 				.makeCols(3, 12);
 			}
 			&.is--full{
+				@media @media-point-screen {
+					.makeCols(12, 12);
+				}
+			}
+			&.is--entrants{
+				//@media @media-point-screen {
+					.makeCols(12, 12);
+				//}
+			}
+			&.is--team-card-note{
 				.makeCols(12, 12);
 			}		
+		}
+		&.is--team-page-preview{
+			@media @media-point-xs {
+				.makeCols(4, 12);
+			}
+			@media @media-point-tablet {
+				.makeCols(5, 12);
+			}
+			@media @media-point-screen {
+				.makeCols(4, 12);
+			}
+		}
+		&.is--team-page-content{
+			@media @media-point-xs {
+				.makeCols(8, 12);
+			}
+			@media @media-point-tablet {
+				.makeCols(7, 12);
+			}
+			@media @media-point-screen {
+				.makeCols(8, 12);
+			}
 		}
 		&.is--video{
 			.makeCols(12, 12);
@@ -697,12 +730,30 @@
 		}
 		&.is--team-card{
 			@media @media-point-notsmart {
-				max-width: 310px;
+				max-width: 310px;	
+				&.is--faculty-inner{
+					max-width: 100%;
+				}				
+			}
+			/*@media @media-point-screen {
 				&.is--faculty-inner{
 					max-width: 235px;
 				}				
+			}*/
+		}
+		&.is--team-dean{
+			margin-bottom: 25px;
+			@media @media-point-screen {
+				margin-bottom: 15px;
 			}
 		}
+		//old
+		/*&.is--team-card-full{
+			margin-bottom: 25px;
+			@media @media-point-screen {
+				margin-bottom: 15px;
+			}
+		}*/
 		&.is--faculty{
 			margin-bottom: 20px;
 			@media @media-point-screen {
@@ -730,9 +781,15 @@
 			.heading4();
 			font-weight: 700;
 			background-color: @white-f2;
-			padding: 30px;	
+			padding: 20px;	
+			@media @media-point-smart {
+				background-color: @b-color-a;	
+				&:hover{
+					background-color: @b-color-a-hover;
+				}			
+			}
 			&:hover{
-				background-color: @b-color-a-hover;
+				background-color: @b-color-a;
 			}
 		}
 		&.is--favorite{
@@ -753,7 +810,10 @@
 		transition: @trs-site;
 		position: relative;
 		&.is--news-link{
-			color: @b-color;
+			color: @white;
+			@media @media-point-notsmart {
+				color: @b-color;
+			}
 			.card-item__card:hover &,
 			.card-item__card.is--active &{
 				color: @white;
@@ -764,9 +824,15 @@
 		&.is--event{
 			align-items: center;
 		}
-		&.is--team-card-full{
+		&.is--team-dean{
 			align-items: center;
-		}		
+		}	
+		&.is--entrants-team{
+			align-items: center;
+		}	
+		&.is--faculty-inner{
+			align-items: center;
+		}	
 	}
 	&cols{
 		&.is--team-card{
@@ -808,28 +874,61 @@
 				}
 			}
 		}
-		&.is--team-card-full{
+		&.is--entrants-team{
 			.makeCols(12, 12);
 			&.is--preview{
-				@media @media-point-screen {					
-					.makeCols(6, 12);
+				@media @media-point-xs {					
+					.makeCols(3.55, 12);
+				}
+				@media @media-point-notsmart {					
+					.makeCols(3.55, 12);
 				}
 			}
 			&.is--desc{
-				@media @media-point-screen {					
-					.makeCols(6, 12);
+				@media @media-point-xs {					
+					.makeCols(8.45, 12);
+				}
+				@media @media-point-notsmart {					
+					.makeCols(8.45, 12);
+				}
+			}
+		}		
+		&.is--team-dean{
+			.makeCols(12, 12);
+			&.is--preview{
+				@media @media-point-screen {				
+					.makeCols(3, 12);
+				}
+			}
+			&.is--desc{
+				@media @media-point-screen {				
+					.makeCols(9, 12);
 				}
 			}
 		}
+		//old	
+		/*&.is--team-card-full{
+			.makeCols(12, 12);
+			&.is--preview{
+				@media @media-point-screen {				
+					.makeCols(3, 12);
+				}
+			}
+			&.is--desc{
+				@media @media-point-screen {				
+					.makeCols(9, 12);
+				}
+			}
+		}*/		
 		&.is--team-card-note{
 			.makeCols(12, 12);
 			&.is--preview{
-				@media @media-point-screen {					
+				@media @media-point-notsmart {					
 					.makeCols(4.5, 12);
 				}
 			}
 			&.is--desc{
-				@media @media-point-screen {					
+				@media @media-point-notsmart {					
 					.makeCols(7.5, 12);
 				}
 			}
@@ -847,6 +946,25 @@
 				}
 			}
 		}		
+		&.is--faculty-inner{
+			.makeCols(12, 12);
+			&.is--preview{
+				@media @media-point-xs {					
+					.makeCols(3.55, 12);
+				}
+				@media @media-point-tablet {					
+					.makeCols(3.55, 12);
+				}
+			}
+			&.is--desc{ 
+				@media @media-point-xs {					
+					.makeCols(8.45, 12);
+				}
+				@media @media-point-tablet {					
+					.makeCols(8.45, 12);
+				}
+			}
+		}	
 	}
 	&bg{
 		transition: @trs-site;
@@ -903,18 +1021,24 @@
 				margin-bottom: 0;
 			}
 		}
+		&.is--team-dean{
+			@media @media-point-device {
+				margin-bottom: 25px;
+			}
+		}
 		&.is--second{
 			@media @media-point-screen {
 				margin-bottom: 0;
 			}
 		}
-		&.is--team-card-full{
-			@media @media-point-device {				
-				margin-bottom: 25px;
-			}
-		}
 		&.is--team-card{
 			margin-bottom: 25px;
+		}
+
+		&.is--entrants-team{
+			@media @media-point-smart {
+				margin-bottom: 25px;
+			}
 		}
 		&.is--faculty-link{
 			width: 64px;
@@ -1114,9 +1238,12 @@
 			color: @black-61;
 			margin-bottom: 10px;
 		}	
-		&.is--team-card-full{
+		&.is--team-dean{
 			margin-bottom: 0;
 		}	
+		/*&.is--team-card-full{
+			margin-bottom: 0;
+		}*/	
 		&.is--team-card-note{
 			font-size: @b-fs + 2;
 			margin-bottom: 30px;
@@ -1248,7 +1375,7 @@
 		}
 		&.is--student{
 			background-color: @b-color-h;
-			height: 2px;			
+			//height: 2px;			
 		}
 	}
 	&note{
@@ -1494,8 +1621,8 @@
 		color: @footer-color;	
 		background: @footer-bg;
 		overflow: hidden;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 		@media @media-point-screen {
 			font-size: @footer-fs;
 			line-height: @footer-lh; 
@@ -1649,10 +1776,11 @@
 		width: 80px;
 		height: 32px;
 		@media @media-point-xs {margin: 0 auto}
-		@media @media-point-notsmart {margin:0 auto;}
+		@media @media-point-notsmart {}
 		@media @media-point-screen {
 			width: 100px;
 			height: 36px;
+			margin:0 auto;
 		}
 		&, &:focus, &:hover{
 			//color: @blue-light!important;
@@ -2965,6 +3093,7 @@ body.rtl .formError .formErrorArrow {
 		background-color: @white;
 		@media @media-point-device-lg {
 			background: @navbar-bg-device;	
+			background: @b-color-a;	
 			position: fixed;
 			left: 0;
 			width: 100%;
@@ -3029,7 +3158,7 @@ body.rtl .formError .formErrorArrow {
 	&btn{
 		display: flex;
 		align-items: center;
-		padding: 10px 0px;
+		padding: 15px 0px;
 	}
 	&btn-name{
 		text-transform: uppercase;
@@ -3037,7 +3166,8 @@ body.rtl .formError .formErrorArrow {
 		letter-spacing: 1px;
 		font-size: @b-fs - 2;
 		padding-left: 15px; 
-		color: @b-color-a;
+		//color: @b-color-a;
+		color: @white;
 	}
 	//hamburger
 	&btn-hamb{
@@ -3051,7 +3181,8 @@ body.rtl .formError .formErrorArrow {
 	&btn-hamb-item{
 		width: 24px;
 		height: 2px;
-		background-color: @b-color-a;
+		//background-color: @b-color-a;
+		background-color: @white;
 		position: absolute;
 		border-radius: 5px;
 		transition: @trs-site;
@@ -3170,13 +3301,15 @@ body.rtl .formError .formErrorArrow {
 	&link{
 		position: relative;
 		display: block;
-		color: @black-61;
+		//color: @black-61;
+		color: @white;
 		transition: @trs-site;
 		line-height: @b-lh - 6;
 		padding: 10px 20px;
 		@media @media-point-device-lg {display: inline-block;}
 		@media @media-point-screen {
 			padding: 10px 3.2vw 10px ~"calc(1.2vw + 20px)";
+			color: @black-61;
 		}
 		span{
 			position: relative;
@@ -3184,15 +3317,19 @@ body.rtl .formError .formErrorArrow {
 		}		
 		.navbar-aside__item.is--active &,
 		&:hover{
-			color: @blue;
+			color: @yellow;
+			@media @media-point-screen-lg {
+				color: @blue;
+			}
 		}
 		.navbar-aside__item.open &,
 		.navbar-aside__item.is--active &{
 			cursor: default;
 			font-weight: 700;
-			color: @blue;
+			color: @yellow;
 			@media @media-point-screen-lg {
 				background: @b-body-bg;
+				color: @blue;
 			}
 		}
 	}
@@ -3892,7 +4029,7 @@ body.rtl .formError .formErrorArrow {
 			border: 0;
 			background: @slick-dot-color;
 			display: block;
-			width: 75px;
+			width: 15px;
 			height: 7px;
 			outline: none;
 			line-height: 0px;
@@ -3901,6 +4038,9 @@ body.rtl .formError .formErrorArrow {
 			//padding: 5px;
 			cursor: pointer;
 			transition: @trs-site;
+			@media @media-point-notsmart {
+				width: 75px;
+			}
 		}
 		&.slick-active button{
 			background: @slick-dot-color-active;
@@ -4566,7 +4706,7 @@ body.rtl .formError .formErrorArrow {
 			margin-bottom: 25px;
 		}
 		h3{
-			font-weight: 500;
+			//font-weight: 500;
 		}
 		h4{
 			margin-bottom: 20px;

@@ -10,8 +10,8 @@
 		color: @footer-color;	
 		background: @footer-bg;
 		overflow: hidden;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 		@media @media-point-screen {
 			font-size: @footer-fs;
 			line-height: @footer-lh; 
@@ -165,10 +165,11 @@
 		width: 80px;
 		height: 32px;
 		@media @media-point-xs {margin: 0 auto}
-		@media @media-point-notsmart {margin:0 auto;}
+		@media @media-point-notsmart {}
 		@media @media-point-screen {
 			width: 100px;
 			height: 36px;
+			margin:0 auto;
 		}
 		&, &:focus, &:hover{
 			//color: @blue-light!important;

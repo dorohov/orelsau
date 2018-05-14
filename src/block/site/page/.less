@@ -68,11 +68,9 @@
 	&container{	
 		position: relative;
 		z-index: 5;
-		@media print{padding: 0!important}
-		@media @media-point-device {
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
+		@media print{padding: 0!important}		
+		padding-top: 40px;
+		padding-bottom: 40px;
 		@media @media-point-screen {
 			padding-top: 5.8vw;
 			padding-bottom: 5.8vw;
@@ -190,6 +188,9 @@
 			}
 
 		}
+		&.is--xs{
+			margin-bottom: 25px;			
+		}
 		&.is--tabs{
 			margin-bottom: 0;
 			@media @media-point-screen-lg {
@@ -295,7 +296,7 @@
 			@media @media-point-xs {
 				.makeCols(6, 12);
 			}
-			@media @media-point-screen {
+			@media @media-point-notsmart {
 				.makeCols(4, 12);
 			}			
 		}
@@ -321,8 +322,40 @@
 				.makeCols(3, 12);
 			}
 			&.is--full{
+				@media @media-point-screen {
+					.makeCols(12, 12);
+				}
+			}
+			&.is--entrants{
+				//@media @media-point-screen {
+					.makeCols(12, 12);
+				//}
+			}
+			&.is--team-card-note{
 				.makeCols(12, 12);
 			}		
+		}
+		&.is--team-page-preview{
+			@media @media-point-xs {
+				.makeCols(4, 12);
+			}
+			@media @media-point-tablet {
+				.makeCols(5, 12);
+			}
+			@media @media-point-screen {
+				.makeCols(4, 12);
+			}
+		}
+		&.is--team-page-content{
+			@media @media-point-xs {
+				.makeCols(8, 12);
+			}
+			@media @media-point-tablet {
+				.makeCols(7, 12);
+			}
+			@media @media-point-screen {
+				.makeCols(8, 12);
+			}
 		}
 		&.is--video{
 			.makeCols(12, 12);

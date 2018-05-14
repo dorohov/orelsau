@@ -652,6 +652,7 @@
 		background-color: @white;
 		@media @media-point-device-lg {
 			background: @navbar-bg-device;	
+			background: @b-color-a;	
 			position: fixed;
 			left: 0;
 			width: 100%;
@@ -716,7 +717,7 @@
 	&btn{
 		display: flex;
 		align-items: center;
-		padding: 10px 0px;
+		padding: 15px 0px;
 	}
 	&btn-name{
 		text-transform: uppercase;
@@ -724,7 +725,8 @@
 		letter-spacing: 1px;
 		font-size: @b-fs - 2;
 		padding-left: 15px; 
-		color: @b-color-a;
+		//color: @b-color-a;
+		color: @white;
 	}
 	//hamburger
 	&btn-hamb{
@@ -738,7 +740,8 @@
 	&btn-hamb-item{
 		width: 24px;
 		height: 2px;
-		background-color: @b-color-a;
+		//background-color: @b-color-a;
+		background-color: @white;
 		position: absolute;
 		border-radius: 5px;
 		transition: @trs-site;
@@ -857,13 +860,15 @@
 	&link{
 		position: relative;
 		display: block;
-		color: @black-61;
+		//color: @black-61;
+		color: @white;
 		transition: @trs-site;
 		line-height: @b-lh - 6;
 		padding: 10px 20px;
 		@media @media-point-device-lg {display: inline-block;}
 		@media @media-point-screen {
 			padding: 10px 3.2vw 10px ~"calc(1.2vw + 20px)";
+			color: @black-61;
 		}
 		span{
 			position: relative;
@@ -871,15 +876,19 @@
 		}		
 		.navbar-aside__item.is--active &,
 		&:hover{
-			color: @blue;
+			color: @yellow;
+			@media @media-point-screen-lg {
+				color: @blue;
+			}
 		}
 		.navbar-aside__item.open &,
 		.navbar-aside__item.is--active &{
 			cursor: default;
 			font-weight: 700;
-			color: @blue;
+			color: @yellow;
 			@media @media-point-screen-lg {
 				background: @b-body-bg;
+				color: @blue;
 			}
 		}
 	}

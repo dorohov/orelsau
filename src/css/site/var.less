@@ -3,7 +3,7 @@
 @url-path:'/wp-content/themes/azbnbasetheme2'; 
 @url-path:'/wp-content/themes/azbn7theme'; 
 @url-path:'/orelsau/';
-@url-path:'';
+//@url-path:'';
 @url-path-css:'@{url-path}/css';
 @url-path-fonts:'@{url-path}/fonts';
 @url-path-img:'@{url-path}/img';
@@ -126,7 +126,7 @@
 @navbar-index-xl:				@navbar-index-screen;
 @navbar-index-xxl:				@navbar-index-screen;
 
-@navbar-bottom:					44px;
+@navbar-bottom:					54px;
 @navbar-bottom-tabs:			64px;
 //===== footer =====//
 @footer-color:					@white; 
@@ -315,8 +315,12 @@
 .heading4(){
 	//.calcFontSize(20, 23, 320, 1680);
 	//.calcLineHeight(23, 27, 320, 1680);	
-	font-size: @b-fs + 8;
-	line-height: @b-lh + 4;
+	font-size: @b-fs + 4;
+	line-height: @b-lh + 0;
+	@media @media-point-notsmart {	
+		font-size: @b-fs + 8;
+		line-height: @b-lh + 4;
+	}
 }
 .heading5(){
 	//.calcFontSize(16, 17, 320, 1680);

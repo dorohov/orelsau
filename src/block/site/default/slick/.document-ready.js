@@ -39,7 +39,7 @@ $(function() {
 		    {
 				breakpoint: 1400,
 				settings: {
-					dots: false,
+					//dots: false,
 					slidesToShow: 2,
 					slidesToScroll: 2,
 				}
@@ -47,7 +47,7 @@ $(function() {
 		    {
 				breakpoint: 768,
 				settings: {
-					dots: false,
+					//dots: false,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 				}
