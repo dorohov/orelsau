@@ -86,7 +86,11 @@
 			th, td{
 				padding: 18px 10px;
 				border-bottom: 1px solid @b-color-a;
+				border-left: 1px solid fadeout(@b-color-a, 50%);
 				//text-align: center;
+				&:last-child{					
+					border-right: 1px solid fadeout(@b-color-a, 50%);
+				}
 			}
 			&:first-child{
 				th, td{
