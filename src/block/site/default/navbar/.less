@@ -490,11 +490,18 @@
 		list-style: none;		
 		margin: 0 0 0px;
 		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		//align-items: center;
 	}
 	&nav-dropdown-item{
 		margin-bottom: 10px;
 		@media @media-point-screen-lg {
 			margin-bottom: 20px;
+		}
+		.makeCols(12, 12);
+		@media @media-point-screen-lg {
+			.makeCols(3, 12); 
 		}
 	}
 	&nav-dropdown-link{
@@ -1029,8 +1036,6 @@
 		.navbar-panel__item.is--active &{
 			cursor: default;
 			font-weight: 700;
-			color: @blue;
-			background: @b-body-bg;
 		}
 	}
 	&dropdown-icon{ 

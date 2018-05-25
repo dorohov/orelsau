@@ -2934,11 +2934,18 @@ body.rtl .formError .formErrorArrow {
 		list-style: none;		
 		margin: 0 0 0px;
 		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		//align-items: center;
 	}
 	&nav-dropdown-item{
 		margin-bottom: 10px;
 		@media @media-point-screen-lg {
 			margin-bottom: 20px;
+		}
+		.makeCols(12, 12);
+		@media @media-point-screen-lg {
+			.makeCols(3, 12); 
 		}
 	}
 	&nav-dropdown-link{
@@ -3473,8 +3480,6 @@ body.rtl .formError .formErrorArrow {
 		.navbar-panel__item.is--active &{
 			cursor: default;
 			font-weight: 700;
-			color: @blue;
-			background: @b-body-bg;
 		}
 	}
 	&dropdown-icon{ 
@@ -3584,6 +3589,9 @@ body.rtl .formError .formErrorArrow {
 	&cols{
 		&.is--heading{
 			flex-grow: 1;
+			&.is--news-card{
+				.makeCols(12, 12);
+			}
 		}
 		&.is--btn{}
 	}
