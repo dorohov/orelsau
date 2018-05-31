@@ -907,8 +907,11 @@
 			transform: translateY(-50%);
 			width: 40px;
 			height: 40px;
-			color: @blue;
+			//color: @white;
 			svg{display: block;}
+			//@media @media-point-screen-lg {				
+				color: @blue;
+			//}
 		}
 	}
 	&dropdown-icon{ 
@@ -933,7 +936,10 @@
 			top: 25%;
 			width: 60%;
 			height: 2px;
-			background-color: @blue;			
+			background-color: @white;
+			@media @media-point-screen-lg {				
+				background-color: @blue;
+			}			
 		}
 		&::before{
 			left: 0;
@@ -954,6 +960,7 @@
 		padding-bottom: 15px;
 		width: 100%;
 		padding-left: 23px;
+		background: none;
 		@media @media-point-screen-lg {
 			background: @b-body-bg;
 			padding-left: 45px;
@@ -964,33 +971,39 @@
 	}
 	&dropdown-item{
 		margin-bottom: 0;
-		font-size: @b-fs + 2;
+		font-size: @b-fs - 2;
 		line-height: @b-lh - 6;
 		@media @media-point-screen-lg {
-			font-size: @b-fs - 2;
+			//font-size: @b-fs - 2;
 		}
 	}
 	&dropdown-link{
 		font-weight: 300;
-		color: @blue-dark;
+		color: @white;
 		display: inline-block;
 		position: relative;
 		padding-left: 10px;
 		padding-top: 7px;
 		padding-bottom: 7px;
 		padding-right: 10px;
-		border-left: 2px solid @blue;
+		border-left: 2px solid @white;
 		&.is--sub3{
 			padding-left: 30px;
 		}
 		@media @media-point-screen-lg {
 			padding-top: 2px;
 			padding-bottom: 2px;
+			border-left: 2px solid @blue;
+			color: @blue-dark;
 		}
 		.navbar-aside__dropdown-item.is--active &,
 		&:hover{
-			color: @blue;
-			border-left-color: @blue-dark;
+			color: @yellow;
+			border-left-color: @yellow;
+			@media @media-point-screen-lg {				
+				color: @blue;
+				border-left-color: @blue-dark;
+			}
 		}
 	}
 }
