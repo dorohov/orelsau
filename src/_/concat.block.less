@@ -2932,7 +2932,7 @@ body.rtl .formError .formErrorArrow {
 	}
 	&nav-dropdown-menu{
 		list-style: none;		
-		margin: 0 0 0px;
+		margin: 0 -10px;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
@@ -2940,6 +2940,7 @@ body.rtl .formError .formErrorArrow {
 	}
 	&nav-dropdown-item{
 		margin-bottom: 10px;
+		padding: 0 10px;
 		@media @media-point-screen-lg {
 			margin-bottom: 20px;
 		}
@@ -4855,4 +4856,14 @@ blockquote {
 	*{
 		margin-bottom: 10px;
 	}
+}
+.img-left{
+	margin-right: auto;
+}
+.img-center{
+	margin-right: auto;
+	margin-left: auto;
+}
+.img-right{
+	margin-left: auto;
 }
