@@ -713,6 +713,76 @@
 		}		
 	}
 }
+.btn-docs__{
+	&item{
+		.btn-clearfix();
+		display: inline-block;
+		position: relative;
+		transition: @trs-btn; 	
+		color: @b-color;
+		padding-left: 45px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-weight: 400;
+		.card-item__card:hover &,
+		.card-item__card.is--active &,
+		&:hover{			
+			color: @b-color-a-hover;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background-image: url("@{url-path-img}/svg/docs-base.svg");
+			width: 26px;
+			height: 33px;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		&[href$=".doc"],
+		&[href$=".docx"]{	
+			&::before{		
+				background-image: url("@{url-path-img}/svg/docs-doc.svg");
+			}
+		}
+		&[href$=".xls"],
+		&[href$=".xlsx"]{
+			&::before{
+				background-image: url("@{url-path-img}/svg/docs-xls.svg");
+			}
+		}
+		&[href$=".pdf"]{
+			&::before{			
+				background-image: url("@{url-path-img}/svg/docs-pdf.svg");
+			}
+		}
+		&[href$=".ppt"],
+		&[href$=".pptx"]{
+			&::before{			
+				background-image: url("@{url-path-img}/svg/docs-ppt.svg");
+			}
+		}
+		&[href$=".zip"],
+		&[href$=".rar"]{
+			&::before{
+				background-image: url("@{url-path-img}/svg/docs-zip.svg");
+			}
+		}
+	}
+	&icon{
+		svg{display: block;}
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 26px;
+		height: 34px;
+		color: @b-color-a-hover;		
+	}
+}
 .card-item__{
 	&card{
 		&.is--student{
